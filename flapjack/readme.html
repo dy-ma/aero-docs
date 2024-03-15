@@ -137,6 +137,13 @@
         </head>
         <body class="vscode-body vscode-light">
             <h1 id="flapjack-octopus">Flapjack Octopus</h1>
+<p>This is an educational document outlining how to create a sample exhibit based around a cute octopus.</p>
+<p>To start, scan the following qr code, or visit the link below (if viewing on mobile).</p>
+<img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/flapjack_qr.png" width="250" />
+<p><a href="https://adobeaero.app.link/UVQHRR1cYHb">https://adobeaero.app.link/UVQHRR1cYHb</a></p>
+<p>This document will explain in detail, for beginners, how to recreate this scene in Adobe Aero.</p>
+<p>Readers will learn how to download 3D models, import them into Adobe Aero, and animate basic behaviors to add interactivity into a scene.</p>
+<p>If you're ready to learn, continue reading!</p>
 <h2 id="finding-ready-made-assets">Finding Ready-Made Assets</h2>
 <p>3D modeling can be a fun but very difficult and slow process. To expedite your workflow, it can be helpful to download ready-made assets created by others. One valuable resource for accessing a vast collection of high-quality 3D models is Sketchfab, an online repository where artists from various industries, including gaming, movies, and architectural visualization, can showcase and share their 3D creations. On Sketchfab, you'll find a diverse range of models spanning characters, creatures, environments, and objects, allowing you to leverage existing assets and focus your efforts on assembling and customizing them to suit your specific needs.</p>
 <p>Today, we'll be downloading a free asset from Sketchfab. You'll need to have a free Sketchfab account, lucky for you I've already created a shared one for us.</p>
@@ -174,6 +181,59 @@
 <h2 id="defining-behaviors">Defining Behaviors</h2>
 <p>Behaviors allow us to make simple animations in response to events. They are the basic building blocks of all movement and interactivity in Aero.</p>
 <p>First, open the Behaviors panel by clicking the running person icon in the bottom left.</p>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/behaviors_button.png" alt=""></p>
+<p>You will see a panel open up, from here you can click the button to add a trigger. Triggers are events which can cause programmed behaviors to start.</p>
+<p>The four triggers are <code>Start</code>, <code>Tap</code>, <code>Proximity Enter</code> and <code>Proximity Exit</code>.</p>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/behavrios_panel_open.png" alt=""></p>
+<p>For now, use the <code>Start</code> trigger. This is the simplest trigger for use when you want a behavior to trigger automatically when the scene loads in.</p>
+<p>You should see the following page, now select an Action to occur when the scene starts. We will make the octopus bounce up and down slowly.</p>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/scene_start.png" alt=""></p>
+<p>Select Bounce under Actions, then set the following settings.</p>
+<ul>
+<li>Y Offset: 1cm. This is the height the octopus will jump each bounce.</li>
+<li>Easing: Ease in-out. This makes the bounce appear more elastic by moving the octopus faster near the beginning and end of the animation.</li>
+<li>Infinite: The octopus will bounce as long as the scene is active.</li>
+</ul>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/bounce_settings.png" alt=""></p>
+<p>Now, click the triangular play button at the top of the box to trigger a single play of the Bounce animation. The button is labeled A in the figure above.</p>
+<p>Alternatively, click the preview to view the continual bouncing. The preview window is great for testing your experience without needing to scan the qr code and load the scene on your phone, saving you time.</p>
+<h2 id="adding-the-popout-card">Adding the popout card</h2>
+<!-- TODO: Add url -->
+<p>First, download the premade card here.</p>
+<p>Import it into the scene just like the Octopus model before.</p>
+<p>Then, using what you know about scaling, shrink the card and move it around until it's small and hiding inside the octopus.</p>
+<h3 id="programming-the-popout">Programming the popout</h3>
+<p>Add a new trigger by tapping the <code>+Trigger</code> button in the behavior panel.</p>
+<p>Then select <code>Tap</code> and set the subject to the octopus.</p>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/Tap_subject.png" alt=""></p>
+<p>Click on the <code>+Action</code> button and select <code>Scale</code>.</p>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/scale.png" alt=""></p>
+<p>Set the scale multiplier to roughly 4x, or whatever size you think is good for the card.</p>
+<p>Feel free to test that action. It should grow to become visible, although it will be clipping through the octopus.</p>
+<p>To move it, add a second action by clicking the <code>+Action</code> button below.</p>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/sequential_action.png" alt=""></p>
+<p>Add a move action and set the following settings. Ensure that the subject is the card, since this is the object we wish to move.</p>
+<p>Shift it wherever you like it.</p>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/sequential_move.png" alt=""></p>
+<p>Now preview the animation by going back to the preview tab and clicking the octopus.</p>
+<p>Whoops! Looks like the card first scales, then moves, resulting in a short period of time where the card displays strangely on top of the octopus, like seen below.</p>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/scale_bug_1.gif" alt=""></p>
+<p>We can fix this by running the two animations in parallel, so the card scales and moves at the same time.</p>
+<p>To do this, simply drag the Move action to below the Scale action, like shown below.</p>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/action_move.gif" alt=""></p>
+<p>Now, preview the animation again to see the fix. Now, the card appears to pop out from within the octopus, like below.</p>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/fixed_move.gif" alt=""></p>
+<h3 id="programming-the-reverse">Programming the reverse</h3>
+<p>Now, we just need to enable the user to hide the card.</p>
+<p>We will just implement the reverse action on another Tap action.</p>
+<p>Add a new Tap trigger with the card as the subject.
+Underneath, add a <code>Scale</code> action and set the scale factor to 0.25x.
+Finally, add a <code>Move</code> action and set the X offset to -10cm.</p>
+<p>If you've done it correctly, it should work like the following.</p>
+<p><img src="file:////Users/dylanang/Documents/aero/aero-docs/flapjack/media/final.gif" alt=""></p>
+<h2 id="wrapping-up">Wrapping Up</h2>
+<p>Congratulations! You learned how to download assets from SketchFab, importing them into Adobe Aero, and basic behavior scripting.</p>
+<p>Now all that's left is to view your work in AR, so click that Share button one more time, make sure to give your work an interesting title, and sign your name. Then, click <code>Apply Changes</code> to update the qr code.</p>
 
             
             
