@@ -73,3 +73,29 @@ If it's too large, try checking the size of the octpus was correctly set to 8 cm
 Behaviors allow us to make simple animations in response to events. They are the basic building blocks of all movement and interactivity in Aero. 
 
 First, open the Behaviors panel by clicking the running person icon in the bottom left.
+
+![](media/behaviors_button.png)
+
+You will see a panel open up, from here you can click the button to add a trigger. Triggers are events which can cause programmed behaviors to start.
+
+The four triggers are `Start`, `Tap`, `Proximity Enter` and `Proximity Exit`. 
+
+![](media/behavrios_panel_open.png)
+
+For now, use the `Start` trigger. This is the simplest trigger for use when you want a behavior to trigger automatically when the scene loads in.
+
+You should see the following page, now select an Action to occur when the scene starts. We will make the octopus bounce up and down slowly.
+
+![](media/scene_start.png)
+
+Select Bounce under Actions, then set the following settings.
+
+- Y Offset: 1cm. This is the height the octopus will jump each bounce.
+- Easing: Ease in-out. This makes the bounce appear more elastic by moving the octopus faster near the beginning and end of the animation.
+- Infinite: The octopus will bounce as long as the scene is active.
+
+![](media/bounce_settings.png)
+
+Now, click the triangular play button at the top of the box to trigger a single play of the Bounce animation. The button is labeled A in the figure above.
+
+Alternatively, click the preview to view the continual bouncing. The preview window is great for testing your experience without needing to scan the qr code and load the scene on your phone, saving you time.
