@@ -6,7 +6,7 @@ To start, scan the following qr code, or visit the link below (if viewing on mob
 
 <img src="media/flapjack_qr.png" width="250" />
 
-https://adobeaero.app.link/UVQHRR1cYHb
+[Mobile viewers click here](https://adobeaero.app.link/UVQHRR1cYHb)
 
 This document will explain in detail, for beginners, how to recreate this scene in Adobe Aero. 
 
