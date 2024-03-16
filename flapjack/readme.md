@@ -117,7 +117,7 @@ Alternatively, click the preview to view the continual bouncing. The preview win
 ## Adding the popout card
 
 <!-- TODO: Add url -->
-First, download the premade card here. 
+First, download the premade card [here](https://github.com/dy-ma/aero-docs/blob/main/flapjack/media/card.png?raw=true)
 
 Import it into the scene just like the Octopus model before.
 
